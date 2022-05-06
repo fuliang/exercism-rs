@@ -1,4 +1,8 @@
-/// What should the type of _function be?
-pub fn map(input: Vec<i32>, _function: ???) -> Vec<i32> {
-    unimplemented!("Transform input vector {:?} using passed function", input);
+/// What should the type of f be?
+pub fn map<I, O, F>(input: Vec<I>, mut f: F) -> Vec<O> 
+where 
+    I: Sized,
+    O: Sized,
+    F: FnMut(I) -> O {
+    input.into_iter().map(|i| f(i)).collect()
 }

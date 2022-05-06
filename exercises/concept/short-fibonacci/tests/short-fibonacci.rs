@@ -13,6 +13,7 @@ fn test_buffer() {
         assert!(zeroized.iter().all(|&v| v == 0));
     }
 }
+
 #[test]
 #[ignore]
 fn test_fibonacci() {
